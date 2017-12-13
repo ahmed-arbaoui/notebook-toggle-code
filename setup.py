@@ -14,7 +14,7 @@ from setuptools import setup, find_packages
 from distutils.util import convert_path
 from pip.req import parse_requirements
 
-module = 'notebook_code_toggle'
+module = 'notebook_toggle_code'
 
 here = path.abspath(path.dirname(__file__))
 
