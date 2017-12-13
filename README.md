@@ -1,7 +1,6 @@
 # notebook-toggle-code
 
-This is a Python package to allow code-toggle of code cells in a [Jupyter notebook](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) by injection of javascript in an output cell.  
-As a consequence for security reasons it only works in [**trusted** notebooks](http://jupyter-notebook.readthedocs.io/en/stable/security.html#security-in-notebook-documents).  
+This is a Python package to allow code-toggle of code cells in a [Jupyter notebook](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) by injection of javascript in an output cell. As a consequence for security reasons it only works in [**trusted** notebooks](http://jupyter-notebook.readthedocs.io/en/stable/security.html#security-in-notebook-documents).  
 
 ## 1 - Install
 
@@ -21,7 +20,8 @@ from notebook_toggle_code import ToggleCode
 ToggleCode(init_show=True, delay_toggle=0, verbose=False).add_js()
 ```
 
-This will inject javascript code (in the output cell) which will react on the next `app_initialized` event.  
+This will inject javascript code (in the output cell) with immediate effect.  
+Upon notebook start the javascript will play upon the `app_initialized` event.  
 
 The arguments are:
 + `init_show` (default=True) to define the initial state
