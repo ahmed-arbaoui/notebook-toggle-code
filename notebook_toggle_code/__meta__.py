@@ -2,9 +2,9 @@
 __name__ = 'notebook_toggle_code'
 __packages__ = [__name__]
 
-__version__ = '0.1.1'
+__version__ = '0.1.0'
 
-__description__ = 'Alow user to toggle between various css states - if notebook is trusted'
+__description__ = 'Alow user to toggle code cells - if notebook is trusted'
 __author__ = 'oscar6echo'
 __author_email__ = 'olivier.borderies@gmail.com'
 __url__ = 'https://github.com/oscar6echo/{}'.format(__name__)
@@ -21,11 +21,12 @@ __classifiers__ = ['Development Status :: 4 - Beta',
 __include_package_data__ = True
 __package_data__ = {
     'templates':
-    ['templates/getCellsFromComment.js',
-     'templates/getCellsFromMetadata.js',
-     'templates/getCellsFromString.js',
-     'templates/notice_short.md',
+    ['templates/bootstrapButtons.css',
+     'templates/demoCalculator.html',
+     'templates/main.html',
      'templates/notice_long.md',
-     'templates/notice_safe.txt'
+     'templates/notice_safe.txt',
+     'templates/notice_short.md',
+     'toggleCode.js'
      ]
 }
