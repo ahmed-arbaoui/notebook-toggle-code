@@ -2,7 +2,7 @@
 __name__ = 'notebook_toggle_code'
 __packages__ = [__name__]
 
-__version__ = '0.1.0'
+__version__ = '0.2'
 
 __description__ = 'Alow user to toggle code cells - if notebook is trusted'
 __author__ = 'oscar6echo'

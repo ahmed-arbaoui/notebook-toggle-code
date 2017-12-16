@@ -6,6 +6,8 @@
 # commands:
 # python setup.py sdist upload -r testpypi
 # python setup.py sdist upload -r pypi
+# python setup.py clean --all
+
 
 
 from os import path
