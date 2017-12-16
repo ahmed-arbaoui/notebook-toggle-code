@@ -31,7 +31,7 @@ window.hideCodeCells = function () {
 
 	// hide header
 	// $('div#header').delay(delayToggle).css('display', 'none');
-	
+
 	// hide selected outline
 	$('.cell.code_cell.rendered.selected').toggleClass('selected');
 };
@@ -91,15 +91,6 @@ window.toggleCodeCellsNbviewer = function () {
 
 
 
-var htmlNbviewer = `
-<li>
-  <a href="javascript:window.toggleCodeCellsNbviewer()" title="Show/Hide Code">
-	<span class="fa fa-code fa-2x menu-icon"></span>
-	<span class="menu-text">Show/Hide Code</span>
-  </a>
-</li>
-`;
-
 var htmlNotebook = `
 <form action="javascript:toggleCodeCellsNotebook()">
 	<input type="submit" id="toggleButton" value="Hide Code" class="bbtn">
@@ -107,7 +98,16 @@ var htmlNotebook = `
 `;
 
 
-// $(document).ready(function () {
+var htmlNbviewer = `
+<li>
+  <a href="javascript:window.toggleCodeCellsNbviewer()" title="Show/Hide Code">
+	<span class="fa fa-cog fa-2x menu-icon"></span>
+	<span class="menu-text">Show/Hide Code</span>
+  </a>
+</li>
+`;
+
+
 
 require([
 	'jquery',
@@ -122,34 +122,34 @@ require([
 ) {
 	promises.app_initialized.then(function (appname) {
 		if (appname === 'NotebookApp') {
-
-			if ($('body.nbviewer').length) {
-				console.log('code cell toggle: nbviewer mode');
-				$(htmlNbviewer).appendTo('.navbar-right');
-				if (window.codeVisible) {
-					window.showCodeCells();
-				}
-				else {
-					window.hideCodeCells();
-				}
+			console.log('code cell toggle: notebook mode');
+			$(htmlNotebook).appendTo('#anchor-div');
+			if (window.codeVisible) {
+				window.showCodeCells();
+				window.setButtonToHide();
 			}
 			else {
-				console.log('code cell toggle: notebook mode');
-				$(htmlNotebook).appendTo('#anchor-div');
-				if (window.codeVisible) {
-					window.showCodeCells();
-					window.setButtonToHide();
-				}
-				else {
-					window.hideCodeCells();
-					window.setButtonToShow();
+				window.hideCodeCells();
+				window.setButtonToShow();
 
-				}
 			}
 		}
 	});
 });
 
-// };
+
+$(document).ready(function () {
+	if ($('body.nbviewer').length) {
+		console.log('code cell toggle: nbviewer mode');
+		$(htmlNbviewer).appendTo('.navbar-right');
+		if (window.codeVisible) {
+			window.showCodeCells();
+		}
+		else {
+			window.hideCodeCells();
+		}
+	}
+
+});
 
 console.log('end main');
